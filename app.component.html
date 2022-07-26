@@ -1,0 +1,14 @@
+<div class="container">
+  <app-cockpit (serverCreated)="onServerAdded($event)"></app-cockpit>
+  (bpCreated)="onBlueprintAdded($event)"
+  <hr><!--to get some data we use event-->
+<div class="row">
+  <div class="col-xs-12">
+    <app-server-element *ngFor="let serverElement of serverElements"
+    [srvElement]="serverElement"></app-server-element>
+    <!--element is property name looping in app-server-element-->
+    <!--element is showing error because it shows error it's acccessed from inside not from outside
+    To access this allow parent component to able to bind this property,use decorators-->
+  </div>
+</div>
+</div>
